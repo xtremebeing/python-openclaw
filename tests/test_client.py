@@ -49,14 +49,14 @@ class TestOpenClawClient:
         """Test POST request"""
         mock_response = Mock()
         mock_response.status_code = 201
-        mock_response.content = b'{"created": true}'
-        mock_response.json.return_value = {"created": True}
+        mock_response.content = b'{"created": "true"}'
+        mock_response.json.return_value = {"created": "true"}
         mock_request.return_value = mock_response
         
         client = OpenClawClient(base_url="https://api.example.com")
         result = client.post("/test", json={"key": "value"})
         
-        assert result == {"created": True}
+        assert result == {"created": "true"}
         mock_request.assert_called_once()
     
     @patch('openclaw.client.requests.Session.request')
