@@ -1,7 +1,11 @@
 """Tests for openclaw exceptions"""
 
 import pytest
-from openclaw.exceptions import OpenClawError, OpenClawConnectionError, OpenClawAuthError
+from openclaw.exceptions import (
+    OpenClawError,
+    OpenClawConnectionError,
+    OpenClawAuthError,
+)
 
 
 def test_openclaw_error():
